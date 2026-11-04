@@ -13,37 +13,8 @@
   });
   $('#ano').textContent = new Date().getFullYear();
 
-  /* ---- Loader: contador ligado ao carregamento real da imagem do hero, mínimo 1,8s ---- */
-  const loader = $('#loader'), countEl = $('#count'), bar = $('#bar');
-  const imgs = $$('.hero img');
-  let loaded = 0;
-  imgs.forEach(img => {
-    if (img.complete) loaded++;
-    else img.addEventListener('load', () => loaded++, { once: true }), img.addEventListener('error', () => loaded++, { once: true });
-  });
-  const start = performance.now(), minT = reduce ? 200 : 1800;
-  let shown = 0;
-  (function tick(now) {
-    const timeP = Math.min((now - start) / minT, 1);
-    const loadP = imgs.length ? loaded / imgs.length : 1;
-    const target = Math.min(timeP, Math.max(loadP, timeP * .9)) * 100;
-    shown += (target - shown) * .12;
-    if (timeP >= 1 && loadP >= 1) shown = Math.max(shown, 99.6);
-    if (now - start > 5000) shown = 100; // fallback em redes lentas
-    const v = Math.round(shown);
-    countEl.textContent = v;
-    bar.style.width = v + '%';
-    if (v >= 100) return finish();
-    requestAnimationFrame(tick);
-  })(start);
-  function finish() {
-    setTimeout(() => {
-      loader.classList.add('done');
-      document.body.classList.remove('is-loading');
-      document.body.classList.add('ready');
-      setTimeout(() => loader.remove(), 1200);
-    }, 250);
-  }
+  /* A primeira dobra aparece imediatamente para reduzir o tempo percebido de carregamento. */
+  requestAnimationFrame(() => document.body.classList.add('ready'));
 
   /* ---- Títulos revelados palavra por palavra ---- */
   $$('.words').forEach(el => {
