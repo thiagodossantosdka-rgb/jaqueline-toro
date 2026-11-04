@@ -115,28 +115,31 @@
   addEventListener('resize', onScroll);
   onScroll();
 
-  /* ---- Acordeões (serviços troca a imagem fixa) ---- */
-  function accordion(root, onOpen) {
-    const items = $$('.acc__item', root);
-    items.forEach((it, i) => $('.acc__btn', it).addEventListener('click', () => {
-      const wasOpen = it.classList.contains('open');
-      items.forEach(x => { x.classList.remove('open'); $('.acc__btn', x).setAttribute('aria-expanded', 'false'); });
-      if (!wasOpen) { it.classList.add('open'); $('.acc__btn', it).setAttribute('aria-expanded', 'true'); }
-      onOpen && onOpen(it, i);
-    }));
+  /* ---- Abas de especialidades ---- */
+  const tabs = $$('.tabs__btn'), pill = $('.tabs__pill');
+  const movePill = btn => { pill.style.width = btn.offsetWidth + 'px'; pill.style.transform = `translateX(${btn.offsetLeft}px)`; };
+  function selectTab(btn) {
+    tabs.forEach(b => {
+      const on = b === btn, painel = $('#' + b.getAttribute('aria-controls'));
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-selected', on);
+      b.tabIndex = on ? 0 : -1;
+      painel.hidden = !on;
+      painel.classList.toggle('on', on);
+    });
+    movePill(btn);
   }
-  const svcIn = $('#svcIn');
-  accordion($('#acc'), (it, i) => {
-    svcIn.classList.add('troca');
-    setTimeout(() => {
-      $('#svcG').textContent = it.dataset.g;
-      $('#svcN').textContent = String(i + 1).padStart(2, '0');
-      $('#svcT').textContent = $('.acc__btn span', it).textContent;
-      $('#svcP').textContent = it.dataset.p;
-      svcIn.classList.remove('troca');
-    }, 280);
+  tabs.forEach((b, i) => {
+    b.addEventListener('click', () => selectTab(b));
+    b.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      selectTab(next); next.focus();
+    });
   });
-
+  movePill($('.tabs__btn.on'));
+  addEventListener('resize', () => movePill($('.tabs__btn.on')));
+  document.fonts && document.fonts.ready.then(() => movePill($('.tabs__btn.on')));
 
   /* ---- Formulário: monta a mensagem e envia pelo WhatsApp (sem servidor) ---- */
   const form = $('#form'), formErro = $('#formErro');

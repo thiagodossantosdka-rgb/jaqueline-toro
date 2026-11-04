@@ -91,6 +91,7 @@
           <span><span class="stars" aria-hidden="true">★★★★★</span><b>150 avaliações no Google</b>Atenção, atendimento e eficiência</span>
         </a>
       </div>
+      <p class="sgrid__hint">Deslize para ver mais <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></p>
     </div>
     <div class="hero__card hero__card--retrato">
       <img src="img/jaqueline.jpg" alt="Jaqueline Toro, advogada especialista em Direito Bancário e Tributário" data-parallax="0.06">
@@ -177,57 +178,87 @@
       <div><div class="eyebrow" data-reveal>Atuação</div><h2 data-reveal>Defesa técnica nas relações <em>bancárias e tributárias.</em></h2></div>
       <p data-reveal>Duas especialidades que se complementam: o Direito Bancário cuida do que você deve aos bancos, o Tributário, do que você deve ao Estado.</p>
     </div>
-    <div class="services">
-      <div class="svc" data-reveal="clip" id="svc" aria-live="polite">
-        <div class="svc__in" id="svcIn">
-          <span class="svc__g" id="svcG">Direito Bancário</span>
-          <span class="svc__n" id="svcN">01</span>
-          <div>
-            <b class="svc__t" id="svcT">Revisão de contratos e juros abusivos</b>
-            <span class="svc__p" id="svcP">Para pessoas físicas e empresas</span>
-          </div>
-        </div>
+
+    <div class="tabs" role="tablist" aria-label="Especialidades" data-reveal>
+      <span class="tabs__pill" aria-hidden="true"></span>
+      <button class="tabs__btn on" role="tab" id="tab-banc" aria-selected="true" aria-controls="painel-banc">Direito Bancário <small>05</small></button>
+      <button class="tabs__btn" role="tab" id="tab-trib" aria-selected="false" aria-controls="painel-trib" tabindex="-1">Direito Tributário <small>04</small></button>
+    </div>
+
+    <div class="painel on" id="painel-banc" role="tabpanel" aria-labelledby="tab-banc">
+      <div class="sgrid">
+        <article class="scard">
+          <div class="scard__top"><b>01</b><span class="scard__ic"><svg viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg></span></div>
+          <h3>Revisão de contratos e juros abusivos</h3>
+          <p>Financiamentos, empréstimos, cartão e cheque especial com taxas acima da média, tarifas e seguros embutidos.</p>
+          <ul><li>Veículo</li><li>Empréstimo</li><li>Cartão</li><li>Capital de giro</li></ul>
+        </article>
+        <article class="scard">
+          <div class="scard__top"><b>02</b><span class="scard__ic"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="M12 8v5M12 16h.01"/></svg></span></div>
+          <h3>Golpes, fraudes e Pix</h3>
+          <p>Transferências fraudulentas, cartão clonado e empréstimos feitos por terceiros. Em muitos casos, o banco responde.</p>
+          <ul><li>Golpe do Pix</li><li>Cartão clonado</li><li>Conta invadida</li></ul>
+        </article>
+        <article class="scard">
+          <div class="scard__top"><b>03</b><span class="scard__ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span></div>
+          <h3>Descontos indevidos e consignado</h3>
+          <p>Descontos que você não reconhece na aposentadoria, pensão ou salário, com pedido de devolução dos valores.</p>
+          <ul><li>Consignado</li><li>Cartão RMC</li><li>Tarifas</li></ul>
+        </article>
+        <article class="scard">
+          <div class="scard__top"><b>04</b><span class="scard__ic"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></span></div>
+          <h3>Superendividamento</h3>
+          <p>Quando as dívidas comprometem o mínimo para viver, a Lei 14.181/2021 permite repactuar tudo em um plano possível.</p>
+          <ul><li>Repactuação</li><li>Plano de pagamento</li></ul>
+        </article>
+        <article class="scard">
+          <div class="scard__top"><b>05</b><span class="scard__ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M15 8l2 2"/></svg></span></div>
+          <h3>Busca e apreensão e leilão de imóvel</h3>
+          <p>Defesa quando o carro ou o imóvel estão em risco, com atenção às etapas e aos prazos obrigatórios.</p>
+          <ul><li>Veículo</li><li>Alienação fiduciária</li><li>Execuções</li></ul>
+        </article>
+        <a class="scard scard--cta" href="#" data-wa="Olá, Dra. Jaqueline! Tenho uma questão bancária e gostaria de uma análise.">
+          <span class="eyebrow">Direito Bancário</span>
+          <h3>Seu caso não está na lista? <em>Me conte.</em></h3>
+          <span class="scard__go">Falar no WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
+        </a>
       </div>
-      <div class="acc" id="acc">
-        <div class="acc__group">Direito Bancário</div>
-        <div class="acc__item open" data-reveal data-g="Direito Bancário" data-p="Para pessoas físicas e empresas">
-          <button class="acc__btn" aria-expanded="true"><small>01</small><span>Revisão de contratos e juros abusivos</span><i>+</i></button>
-          <div class="acc__body"><div><p>Financiamentos, empréstimos, cartão de crédito e cheque especial com taxas acima da média de mercado, tarifas e seguros embutidos. A análise do contrato mostra o que pode ser questionado.</p><ul><li>Financiamento de veículo</li><li>Empréstimo pessoal</li><li>Cartão e cheque especial</li><li>Capital de giro</li></ul></div></div>
-        </div>
-        <div class="acc__item" data-reveal data-g="Direito Bancário" data-p="Atuação rápida faz diferença">
-          <button class="acc__btn" aria-expanded="false"><small>02</small><span>Golpes, fraudes e Pix</span><i>+</i></button>
-          <div class="acc__body"><div><p>Transferências fraudulentas, cartão clonado, empréstimos contratados por terceiros e golpes por falha de segurança. Em muitos casos, o banco responde pelo prejuízo.</p><ul><li>Golpe do Pix</li><li>Cartão clonado</li><li>Empréstimo não contratado</li><li>Conta invadida</li></ul></div></div>
-        </div>
-        <div class="acc__item" data-reveal data-g="Direito Bancário" data-p="Aposentados, pensionistas e servidores">
-          <button class="acc__btn" aria-expanded="false"><small>03</small><span>Descontos indevidos e consignado</span><i>+</i></button>
-          <div class="acc__body"><div><p>Descontos em aposentadoria, pensão ou salário que você não reconhece, cartão de crédito consignado (RMC) e empréstimos que não foram contratados, com pedido de devolução dos valores.</p><ul><li>Consignado não contratado</li><li>Cartão RMC</li><li>Tarifas indevidas</li></ul></div></div>
-        </div>
-        <div class="acc__item" data-reveal data-g="Direito Bancário" data-p="Lei 14.181/2021">
-          <button class="acc__btn" aria-expanded="false"><small>04</small><span>Superendividamento</span><i>+</i></button>
-          <div class="acc__body"><div><p>Quando as dívidas comprometem o mínimo necessário para viver, a lei permite repactuar todos os débitos em um plano de pagamento possível.</p><ul><li>Repactuação de dívidas</li><li>Plano de pagamento</li><li>Negativação indevida</li></ul></div></div>
-        </div>
-        <div class="acc__item" data-reveal data-g="Direito Bancário" data-p="Carro e imóvel em risco">
-          <button class="acc__btn" aria-expanded="false"><small>05</small><span>Busca e apreensão e leilão de imóvel</span><i>+</i></button>
-          <div class="acc__body"><div><p>Defesa em ações de busca e apreensão de veículos e em procedimentos de leilão de imóveis com alienação fiduciária, que têm etapas e prazos que precisam ser respeitados.</p><ul><li>Busca e apreensão</li><li>Alienação fiduciária</li><li>Execuções bancárias</li></ul></div></div>
-        </div>
-        <div class="acc__group">Direito Tributário</div>
-        <div class="acc__item" data-reveal data-g="Direito Tributário" data-p="Federal, distrital e municipal">
-          <button class="acc__btn" aria-expanded="false"><small>06</small><span>Execução fiscal e autos de infração</span><i>+</i></button>
-          <div class="acc__body"><div><p>Defesa em cobranças da Receita Federal, da PGFN e do GDF, nas esferas administrativa e judicial, discutindo mérito, prescrição e a forma da cobrança.</p><ul><li>Execução fiscal</li><li>Dívida ativa</li><li>Auto de infração</li><li>Defesa administrativa</li></ul></div></div>
-        </div>
-        <div class="acc__item" data-reveal data-g="Direito Tributário" data-p="Para empresas de todos os portes">
-          <button class="acc__btn" aria-expanded="false"><small>07</small><span>Planejamento tributário</span><i>+</i></button>
-          <div class="acc__body"><div><p>Escolha do regime tributário, organização das operações e revisão da carga de impostos da empresa, sempre dentro da lei.</p><ul><li>Simples, Presumido ou Real</li><li>Holding</li><li>Reforma tributária</li></ul></div></div>
-        </div>
-        <div class="acc__item" data-reveal data-g="Direito Tributário" data-p="Pessoas físicas e empresas">
-          <button class="acc__btn" aria-expanded="false"><small>08</small><span>Recuperação de tributos e isenção de IR</span><i>+</i></button>
-          <div class="acc__body"><div><p>Restituição ou compensação de tributos pagos a maior nos últimos 5 anos e isenção de imposto de renda para aposentados e pensionistas com doenças graves previstas em lei.</p><ul><li>Restituição</li><li>Compensação</li><li>Isenção por doença grave</li></ul></div></div>
-        </div>
-        <div class="acc__item" data-reveal data-g="Direito Tributário" data-p="Regularização de débitos tributários">
-          <button class="acc__btn" aria-expanded="false"><small>09</small><span>Parcelamentos e transação tributária</span><i>+</i></button>
-          <div class="acc__body"><div><p>Programas de parcelamento e transação com a PGFN e com o GDF, que podem trazer descontos em multas e juros conforme o perfil da dívida.</p><ul><li>Transação PGFN</li><li>Refis</li><li>Parcelamento</li></ul></div></div>
-        </div>
+      <p class="sgrid__hint">Deslize para ver mais <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></p>
+    </div>
+
+    <div class="painel" id="painel-trib" role="tabpanel" aria-labelledby="tab-trib" hidden>
+      <div class="sgrid">
+        <article class="scard">
+          <div class="scard__top"><b>01</b><span class="scard__ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span></div>
+          <h3>Execução fiscal e autos de infração</h3>
+          <p>Defesa em cobranças da Receita Federal, da PGFN e do GDF, discutindo mérito, prescrição e a forma da cobrança.</p>
+          <ul><li>Execução fiscal</li><li>Dívida ativa</li><li>Auto de infração</li></ul>
+        </article>
+        <article class="scard">
+          <div class="scard__top"><b>02</b><span class="scard__ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span></div>
+          <h3>Planejamento tributário</h3>
+          <p>Escolha do regime e organização das operações da empresa para reduzir a carga de impostos, sempre dentro da lei.</p>
+          <ul><li>Regime tributário</li><li>Holding</li><li>Reforma tributária</li></ul>
+        </article>
+        <article class="scard">
+          <div class="scard__top"><b>03</b><span class="scard__ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4M12 8v8M9.5 10.5c0-1 1.1-1.5 2.5-1.5s2.5.6 2.5 1.6c0 2.4-5 1.2-5 3.6 0 1 1.1 1.8 2.5 1.8s2.5-.6 2.5-1.5"/></svg></span></div>
+          <h3>Recuperação de tributos e isenção de IR</h3>
+          <p>Restituição de tributos pagos a maior nos últimos 5 anos e isenção de IR para aposentados com doença grave.</p>
+          <ul><li>Restituição</li><li>Compensação</li><li>Isenção de IR</li></ul>
+        </article>
+        <article class="scard">
+          <div class="scard__top"><b>04</b><span class="scard__ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15h3"/></svg></span></div>
+          <h3>Parcelamentos e transação tributária</h3>
+          <p>Programas de parcelamento e transação com a PGFN e o GDF, que podem trazer descontos em multas e juros.</p>
+          <ul><li>Transação PGFN</li><li>Refis</li><li>Parcelamento</li></ul>
+        </article>
+        <a class="scard scard--cta scard--wide" href="#" data-wa="Olá, Dra. Jaqueline! Tenho uma questão tributária e gostaria de uma análise.">
+          <span class="eyebrow">Direito Tributário</span>
+          <h3>Pessoa física ou empresa, <em>vamos analisar o seu caso.</em></h3>
+          <span class="scard__go">Falar no WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
+        </a>
       </div>
+      <p class="sgrid__hint">Deslize para ver mais <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></p>
     </div>
   </div>
 </section>
@@ -285,6 +316,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
           @jaquelinetoroadv</a>
       </div>
+      <p class="sgrid__hint">Deslize para ver mais <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></p>
     </div>
   </div>
 </section>
@@ -331,6 +363,7 @@
         <a class="btn btn--light" href="https://www.google.com/maps/dir/?api=1&destination=-15.7849947,-47.8902081" target="_blank" rel="noopener">Como chegar
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5 4h7v7"/></svg></a>
       </div>
+      <p class="sgrid__hint">Deslize para ver mais <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></p>
     </div>
   </div>
 </section>
